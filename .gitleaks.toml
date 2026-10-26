@@ -1,0 +1,12 @@
+# gitleaks 設定。public 化の前に `gitleaks detect`（全履歴）を必ず通す。
+[extend]
+useDefault = true
+
+[allowlist]
+description = "ドキュメントの慣例値。実在しないので検出から除外する"
+regexes = [
+  '''[A-Za-z0-9._%+-]+@example\.com''',
+]
+paths = [
+  '''\.gitleaks\.toml''',
+]
