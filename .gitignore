@@ -1,0 +1,42 @@
+# ── Terraform / IaC ───────────────────────────────
+# 🔴 tfstate には RDS パスワード・Secrets の値が平文で入る。絶対にコミットしない
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.tfstate.lock.info
+crash.log
+crash.*.log
+# 変数の実値。認証情報を書きがち（*.tfvars.example は追跡してよい）
+*.tfvars
+*.auto.tfvars
+!*.tfvars.example
+# ⭐ .terraform.lock.hcl は「コミットする」。再現性のために必要（除外しない）
+
+# ── 認証情報 ──────────────────────────────────────
+.env
+.env.*
+!.env.example
+credentials
+.aws/
+*.pem
+*.key
+!*.pub
+id_rsa
+id_ed25519
+
+# ── 言語・ツール ──────────────────────────────────
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+build/
+target/
+
+# ── OS / エディタ ─────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
