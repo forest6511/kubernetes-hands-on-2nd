@@ -1,0 +1,12 @@
+# #region todo-db-service
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-db
+spec:
+  selector:
+    app: todo-db
+  ports:
+    - port: 5432
+      targetPort: 5432
+# #endregion todo-db-service

@@ -1,0 +1,2 @@
+deployment.apps/todo-db created
+deployment.apps/todo-frontend created

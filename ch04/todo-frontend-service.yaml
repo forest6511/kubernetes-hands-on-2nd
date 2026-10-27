@@ -1,0 +1,12 @@
+# #region todo-frontend-service
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-frontend
+spec:
+  selector:
+    app: todo-frontend
+  ports:
+    - port: 80
+      targetPort: 80
+# #endregion todo-frontend-service

@@ -1,0 +1,5 @@
+NAME                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/todo-db-data   Bound    pvc-4c07ca58-c0a4-4f9f-a7a5-cb4bd578b07d   1Gi        RWO            standard       <unset>                 1s
+
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                  STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+persistentvolume/pvc-4c07ca58-c0a4-4f9f-a7a5-cb4bd578b07d   1Gi        RWO            Delete           Bound    default/todo-db-data   standard       <unset>                          1s

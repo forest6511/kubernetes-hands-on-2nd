@@ -1,0 +1,10 @@
+diff -r ch07/copy/dev/todo-api.yaml ch07/copy/prod/todo-api.yaml
+6c6
+<   replicas: 1
+---
+>   replicas: 3
+diff -r ch07/copy/dev/todo-config.yaml ch07/copy/prod/todo-config.yaml
+6c6
+<   APP_TITLE: "Todo（開発）"
+---
+>   APP_TITLE: "Todo"

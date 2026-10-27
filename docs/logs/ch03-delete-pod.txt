@@ -1,0 +1,1 @@
+pod "hello" deleted from default namespace

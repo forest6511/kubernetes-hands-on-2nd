@@ -1,0 +1,9 @@
+Events:
+  Type     Reason     Age               From               Message
+  ----     ------     ----              ----               -------
+  Normal   Scheduled  15s               default-scheduler  Successfully assigned default/typo-69856ccddd-7qqnt to minikube
+  Normal   BackOff    14s               kubelet            spec.containers{nginx}: Back-off pulling image "ngnix:1.30.6-alpine"
+  Warning  Failed     14s               kubelet            spec.containers{nginx}: Error: ImagePullBackOff
+  Normal   Pulling    2s (x2 over 15s)  kubelet            spec.containers{nginx}: Pulling image "ngnix:1.30.6-alpine"
+  Warning  Failed     1s (x2 over 14s)  kubelet            spec.containers{nginx}: Failed to pull image "ngnix:1.30.6-alpine": failed to pull and unpack image "docker.io/library/ngnix:1.30.6-alpine": failed to resolve reference "docker.io/library/ngnix:1.30.6-alpine": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+  Warning  Failed     1s (x2 over 14s)  kubelet            spec.containers{nginx}: Error: ErrImagePull

@@ -1,0 +1,2 @@
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   24s   v1.37.0

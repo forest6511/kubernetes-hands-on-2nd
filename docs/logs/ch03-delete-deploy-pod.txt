@@ -1,0 +1,1 @@
+pod "hello-bcd74f989-fzhc8" deleted from default namespace

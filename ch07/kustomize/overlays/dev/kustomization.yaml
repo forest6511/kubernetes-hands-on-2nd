@@ -1,0 +1,7 @@
+# #region dev
+# 開発用: base に「見出しの違い」だけを重ねる
+resources:
+  - ../../base
+patches:
+  - path: todo-config.yaml
+# #endregion dev

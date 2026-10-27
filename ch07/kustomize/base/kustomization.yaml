@@ -1,0 +1,9 @@
+# #region base
+# 開発と本番で共通のマニフェスト
+resources:
+  - todo-config.yaml
+  - todo-db.yaml
+  - todo-api.yaml
+  - todo-frontend.yaml
+  - httproute.yaml
+# #endregion base

@@ -1,0 +1,20 @@
+# わざと失敗させるマニフェスト: イメージ名が1文字違う（nginx → ngnix）
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: typo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: typo
+  template:
+    metadata:
+      labels:
+        app: typo
+    spec:
+      containers:
+        - name: nginx
+          # #region typo
+          image: ngnix:1.30.6-alpine
+          # #endregion typo

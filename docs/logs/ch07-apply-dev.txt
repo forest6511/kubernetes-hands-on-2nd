@@ -1,0 +1,8 @@
+configmap/todo-config configured
+service/todo-api unchanged
+service/todo-db unchanged
+service/todo-frontend unchanged
+deployment.apps/todo-api unchanged
+deployment.apps/todo-db unchanged
+deployment.apps/todo-frontend configured
+httproute.gateway.networking.k8s.io/todo configured

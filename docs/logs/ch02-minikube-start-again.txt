@@ -1,0 +1,9 @@
+* Darwin 26.6.2 (arm64) 上の [minikube] minikube v1.39.0
+* 既存のプロファイルを元に、docker ドライバーを使用します
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Pulling base image v0.0.51 ...
+* containerd 2.3.4 で Kubernetes v1.37.0 を準備しています...
+* Kubernetes コンポーネントを検証しています...
+  - gcr.io/k8s-minikube/storage-provisioner:v5 イメージを使用しています
+* 有効なアドオン: storage-provisioner, default-storageclass
+* 終了しました！kubectl がデフォルトで「minikube」クラスターと「default」ネームスペースを使用するよう設定されました

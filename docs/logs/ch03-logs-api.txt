@@ -1,0 +1,2 @@
+db not ready: lookup todo-db on 10.96.0.10:53: no such host
+not ready: lookup todo-db on 10.96.0.10:53: no such host

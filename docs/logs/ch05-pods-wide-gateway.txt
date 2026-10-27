@@ -1,0 +1,5 @@
+NAME                                  READY   STATUS    RESTARTS   AGE    IP            NODE       NOMINATED NODE   READINESS GATES
+todo-api-75875bc9f9-5rl8k             1/1     Running   0          117s   10.244.0.11   minikube   <none>           <none>
+todo-db-6756659cd7-mh2xd              1/1     Running   0          98s    10.244.0.14   minikube   <none>           <none>
+todo-frontend-6588d57bf9-p8nxw        1/1     Running   0          57s    10.244.0.19   minikube   <none>           <none>
+todo-gateway-nginx-55d85d8bfb-62888   1/1     Running   0          23s    10.244.0.22   minikube   <none>           <none>

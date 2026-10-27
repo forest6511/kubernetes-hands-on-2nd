@@ -1,0 +1,30 @@
+# 第1章: Todo アプリを Docker Compose で動かす（3つのコンテナ）
+# #region compose
+services:
+  todo-frontend:
+    build: ../app/frontend
+    image: todo-frontend:v1
+    ports:
+      - "8000:80"
+    depends_on:
+      - todo-api
+
+  todo-api:
+    build: ../app/api
+    image: todo-api:v1
+    environment:
+      DB_HOST: todo-db
+      DB_PASSWORD: todo-pass
+
+  todo-db:
+    image: postgres:18.6-alpine
+    environment:
+      POSTGRES_USER: todo
+      POSTGRES_PASSWORD: todo-pass
+      POSTGRES_DB: todo
+    volumes:
+      - todo-db-data:/var/lib/postgresql
+
+volumes:
+  todo-db-data:
+# #endregion compose

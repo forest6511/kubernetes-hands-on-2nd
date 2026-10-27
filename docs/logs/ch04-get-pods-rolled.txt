@@ -1,0 +1,3 @@
+NAME                             READY   STATUS        RESTARTS   AGE
+todo-frontend-6588d57bf9-tqn7v   1/1     Running       0          1s
+todo-frontend-d75f6d75d-2wlrw    1/1     Terminating   0          26s

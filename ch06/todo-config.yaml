@@ -1,0 +1,8 @@
+# #region todo-config
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todo-config
+data:
+  APP_TITLE: "Todo"
+# #endregion todo-config

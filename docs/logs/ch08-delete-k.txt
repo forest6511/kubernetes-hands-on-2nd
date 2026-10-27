@@ -1,0 +1,8 @@
+configmap "todo-config" deleted from default namespace
+service "todo-api" deleted from default namespace
+service "todo-db" deleted from default namespace
+service "todo-frontend" deleted from default namespace
+deployment.apps "todo-api" deleted from default namespace
+deployment.apps "todo-db" deleted from default namespace
+deployment.apps "todo-frontend" deleted from default namespace
+httproute.gateway.networking.k8s.io "todo" deleted from default namespace

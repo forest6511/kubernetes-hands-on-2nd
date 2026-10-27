@@ -1,0 +1,2 @@
+NAME                 TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+todo-gateway-nginx   NodePort   10.110.6.187   <none>        80:31262/TCP   0s

@@ -1,0 +1,23 @@
+Status:
+  Parents:
+    Conditions:
+      Last Transition Time:  2026-10-27T01:14:08Z
+      Message:               The Route is accepted
+      Observed Generation:   1
+      Reason:                Accepted
+      Status:                True
+      Type:                  Accepted
+      Last Transition Time:  2026-10-27T01:14:08Z
+      Message:               All references are resolved
+      Observed Generation:   1
+      Reason:                ResolvedRefs
+      Status:                True
+      Type:                  ResolvedRefs
+    Controller Name:         gateway.nginx.org/nginx-gateway-controller
+    Parent Ref:
+      Group:         gateway.networking.k8s.io
+      Kind:          Gateway
+      Name:          todo-gateway
+      Namespace:     default
+      Section Name:  http
+Events:              <none>

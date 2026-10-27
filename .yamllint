@@ -1,0 +1,12 @@
+# yamllint の設定。Helm のテンプレート（{{ }} を含む）は YAML として読めないので外す
+extends: default
+ignore: |
+  ch08/helm/todo/templates/
+rules:
+  document-start: disable
+  line-length:
+    max: 100
+  truthy:
+    check-keys: false
+  # 本に載せる範囲の印（# #region / # #endregion）は、範囲の字下げに合わせて置くため
+  comments-indentation: disable

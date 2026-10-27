@@ -1,0 +1,23 @@
+minikube service todo-gateway-nginx --url
+grep -rn todo-pass ch03
+kubectl delete pod -l app=todo-db
+kubectl apply -f ch06/todo-config.yaml
+kubectl create secret generic todo-db --from-literal=password=todo-pass --dry-run=client -o yaml
+kubectl create secret generic todo-db --from-literal=password=todo-pass
+kubectl get secret todo-db -o jsonpath={.data.password}
+bash -c kubectl get secret todo-db -o jsonpath='{.data.password}' | base64 -d
+kubectl apply -f ch06/todo-api-wrong-key.yaml
+kubectl get pods -l app=todo-api
+bash -c kubectl describe pod todo-api-798464dcdb-fvpq6 | sed -n '/^Events:/,$p'
+kubectl apply -f ch06/todo-api.yaml
+kubectl rollout status deployment/todo-api
+curl -s /api/config
+kubectl apply -f ch06/todo-config.yaml
+kubectl rollout restart deployment/todo-api
+kubectl rollout status deployment/todo-api
+kubectl get storageclass
+kubectl apply -f ch06/todo-db-pvc.yaml
+kubectl get pvc
+kubectl apply -f ch06/todo-db.yaml
+kubectl rollout status deployment/todo-db
+kubectl get pvc,pv

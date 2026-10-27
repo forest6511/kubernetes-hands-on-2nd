@@ -1,0 +1,13 @@
+# わざと失敗させる Service: selector のラベルが1文字違う（todo-api → todo-apl）
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-api
+spec:
+  selector:
+    # #region typo
+    app: todo-apl
+    # #endregion typo
+  ports:
+    - port: 8080
+      targetPort: 8080

@@ -1,0 +1,30 @@
+kubectl get pods -o wide
+kubectl delete pod -l app=todo-db
+kubectl get pods -o wide
+kubectl apply -f ch04/todo-db-service.yaml
+kubectl get service todo-db
+kubectl get endpointslices -l kubernetes.io/service-name=todo-db
+kubectl apply -f ch04/todo-api-service.yaml -f ch04/todo-frontend-service.yaml
+kubectl rollout restart deployment/todo-frontend
+kubectl rollout status deployment/todo-frontend
+kubectl get pods
+kubectl get services
+kubectl port-forward service/todo-frontend 8000:80
+bash -c kubectl run tmp --rm -i --restart=Never --image=registry.k8s.io/e2e-test-images/jessie-dnsutils:1.3 -- nslookup todo-db 2>&1 | grep -v -e '^If you' -e '^All commands'
+kubectl port-forward service/todo-api 8001:8080
+curl -s http://localhost:8001/api/todos
+kubectl apply -f ch04/todo-api-service-typo.yaml
+kubectl get endpointslices -l kubernetes.io/service-name=todo-api
+kubectl apply -f ch04/todo-api-service.yaml
+docker build -t todo-frontend:v2 --build-arg VERSION=v2 app/frontend
+minikube image load todo-frontend:v2
+kubectl set image deployment/todo-frontend nginx=todo-frontend:v2
+kubectl rollout status deployment/todo-frontend
+kubectl get pods -l app=todo-frontend
+kubectl port-forward service/todo-frontend 8000:80
+kubectl rollout undo deployment/todo-frontend
+kubectl rollout status deployment/todo-frontend
+kubectl port-forward service/todo-frontend 8000:80
+kubectl set image deployment/todo-frontend nginx=todo-frontend:v2
+kubectl rollout status deployment/todo-frontend
+kubectl port-forward service/todo-frontend 8000:80

@@ -1,0 +1,121 @@
+PASS	CRUD	ch01	Compose: 画面が HTTP 200
+PASS	CRUD	ch01	追加（id=1）
+PASS	CRUD	ch01	一覧に「テスト」がある
+PASS	CRUD	ch01	完了にする（done=true）
+PASS	CRUD	ch01	削除（204）
+PASS	CRUD	ch01	削除後の一覧に無い
+PASS	自己修復	ch01	Compose: API のコンテナを消すと API がエラー（504）
+PASS	自己修復	ch01	Compose: 待っても戻らない（10 秒後も 200 以外）
+PASS	自己修復	ch01	Compose: up -d をもう一度打つと戻り、Todo も残る
+PASS	起動	ch02	コンテキストが minikube（のプロファイル）
+PASS	起動	ch02	node が Ready
+PASS	起動	ch02	hello の Pod が Running
+PASS	起動	ch02	port-forward で nginx の画面（HTTP 200）
+PASS	起動	ch02	delete のあと Pod が無い
+PASS	起動	ch02	kube-system で Kubernetes の部品が動いている
+PASS	起動	ch02	stop と start のあと node が Ready
+PASS	自己修復	ch03	Pod を直接作ると、消したあと戻らない
+PASS	自己修復	ch03	Deployment の Pod は消すと別の名前で戻る（hello-bcd74f989-fzhc8 → hello-bcd74f989-5nd46）
+PASS	自己修復	ch03	3つのうち1つを消しても3つに戻る
+PASS	失敗	ch03	イメージ名の誤りで ImagePullBackOff / ErrImagePull
+PASS	失敗	ch03	minikube に渡す前は todo-api が ImagePullBackOff
+PASS	更新	ch03	image load のあと todo-api のコンテナが動く
+PASS	失敗	ch03	todo-frontend が CrashLoopBackOff / Error
+PASS	DNS	ch03	todo-api が READY 0/1
+PASS	DNS	ch03	todo-api のログに todo-db の名前解決の失敗
+PASS	DNS	ch03	todo-frontend のログに upstream todo-api の失敗
+PASS	DNS	ch04	Pod を作り直すと名前が変わる（todo-db-6756659cd7-knmbk → todo-db-6756659cd7-mh2xd）
+PASS	DNS	ch04	todo-db の EndpointSlice に DB の Pod の IP
+PASS	DNS	ch04	Service ができると todo-api が READY 1/1
+PASS	DNS	ch04	todo-frontend が Running（READY 1/1）
+PASS	CRUD	ch04	port-forward で画面（HTTP 200）
+PASS	CRUD	ch04	追加（id=1）
+PASS	CRUD	ch04	一覧に「テスト」がある
+PASS	CRUD	ch04	完了にする（done=true）
+PASS	CRUD	ch04	削除（204）
+PASS	CRUD	ch04	削除後の一覧に無い
+PASS	DNS	ch04	nslookup で todo-db.default.svc.cluster.local が引ける
+PASS	CRUD	ch04	API の port-forward で /api/todos（HTTP 200）
+PASS	失敗	ch04	selector の誤りで画面から API に届かない（502）
+PASS	失敗	ch04	selector の誤りで EndpointSlice が空
+PASS	失敗	ch04	selector を直すと戻る
+PASS	更新	ch04	rollout で v2 に入れ替わる（画面に v2）
+PASS	更新	ch04	undo で v1 に戻る
+PASS	更新	ch04	undo のあと画面が v1
+PASS	更新	ch04	もう一度 v2 にする
+PASS	CRUD	ch04	v2 でも前の Todo が見える
+PASS	Gateway	ch05	GatewayClass nginx が ACCEPTED
+PASS	Gateway	ch05	Gateway が PROGRAMMED
+PASS	Gateway	ch05	Service todo-gateway-nginx が自動でできる（NodePort）
+PASS	Gateway	ch05	minikube service --url の URL で / が HTML
+PASS	Gateway	ch05	追加（id=3）
+PASS	Gateway	ch05	一覧に「Gateway 経由」がある
+PASS	Gateway	ch05	完了にする（done=true）
+PASS	Gateway	ch05	削除（204）
+PASS	Gateway	ch05	削除後の一覧に無い
+PASS	Gateway	ch05	/api は todo-frontend を通らず Gateway から直接 todo-api に届く（送り元 10.244.0.22）
+PASS	失敗	ch05	parentRefs の誤りで 404
+PASS	失敗	ch05	describe で Parents が空（Accepted が無い）
+PASS	Gateway	ch05	parentRefs を直すと戻る
+PASS	設定	ch06	パスワードが2つのマニフェストに直接書いてある
+PASS	永続化	ch06	（困りごと）DB の Pod を消す前は Todo がある
+PASS	永続化	ch06	（困りごと）PVC が無いと DB の Pod を消すと Todo が消える
+PASS	設定	ch06	base64 -d で元のパスワードに戻る
+PASS	失敗	ch06	存在しないキーで CreateContainerConfigError
+FAIL	失敗	ch06	describe に「couldn't find key passwd」
+PASS	失敗	ch06	失敗している間も古い todo-api は動いている
+PASS	設定	ch06	APP_TITLE が ConfigMap から入る（Todo）
+PASS	設定	ch06	apply しただけでは画面の見出しは変わらない
+PASS	設定	ch06	restart のあと APP_TITLE が変わる（わたしの Todo）
+PASS	永続化	ch06	PVC が Bound
+PASS	永続化	ch06	DB の PGDATA が PVC の中（/var/lib/postgresql/18/docker）
+PASS	永続化	ch06	strategy が Recreate
+PASS	永続化	ch06	PVC があると DB の Pod を消しても Todo が残る
+PASS	永続化	ch06	minikube stop と start のあとも Todo が残る
+PASS	設定	ch07	dev と prod の違いは replicas と APP_TITLE だけ
+PASS	設定	ch07	prod でも todo-db は1つ
+PASS	失敗	ch07	パッチの対象の名前の誤りで kubectl kustomize がエラー
+PASS	設定	ch07	dev の見出し（Todo（開発））が出る
+PASS	CRUD	ch07	追加（id=2）
+PASS	CRUD	ch07	一覧に「Kustomize で入れた」がある
+PASS	CRUD	ch07	完了にする（done=true）
+PASS	CRUD	ch07	削除（204）
+PASS	CRUD	ch07	削除後の一覧に無い
+PASS	永続化	ch07	前の章の Todo が残る
+PASS	Helm移行	ch08	podinfo が deployed
+PASS	Helm移行	ch08	podinfo の Pod が動く
+PASS	Helm移行	ch08	uninstall で podinfo が消える
+PASS	Helm移行	ch08	helm template で APP_TITLE が values の値になる
+PASS	Helm移行	ch08	helm lint が通る
+PASS	Helm移行	ch08	delete -k のあとも PVC と Gateway が残る
+PASS	Helm移行	ch08	Helm のリリースだけで Gateway 経由の画面
+PASS	Helm移行	ch08	前の章の Todo（消えない Todo）が残る
+PASS	CRUD	ch08	追加（id=4）
+PASS	CRUD	ch08	一覧に「Helm で入れた」がある
+PASS	CRUD	ch08	完了にする（done=true）
+PASS	CRUD	ch08	削除（204）
+PASS	CRUD	ch08	削除後の一覧に無い
+PASS	Helm移行	ch08	upgrade でリビジョンが 2
+PASS	失敗	ch08	存在しないタグの upgrade が失敗する（exit=1・91秒）
+PASS	失敗	ch08	history に failed
+PASS	失敗	ch08	失敗している間も古い todo-api で画面が動く
+PASS	失敗	ch08	rollback で番号が1つ増える（4: Rollback to 2）
+PASS	失敗	ch08	rollback でイメージが todo-api:v1 に戻る
+PASS	失敗	ch08	追加（id=5）
+PASS	失敗	ch08	一覧に「rollback のあと」がある
+PASS	失敗	ch08	完了にする（done=true）
+PASS	失敗	ch08	削除（204）
+PASS	失敗	ch08	削除後の一覧に無い
+PASS	失敗	ch08	--rollback-on-failure で自動で戻る（6: Rollback to 4）
+PASS	Helm移行	ch08	最後に Helm のリリース todo が deployed
+PASS	CRUD	ch08	追加（id=6）
+PASS	CRUD	ch08	一覧に「完成」がある
+PASS	CRUD	ch08	完了にする（done=true）
+PASS	CRUD	ch08	削除（204）
+PASS	CRUD	ch08	削除後の一覧に無い
+PASS	up.sh	ch03	ch03/up.sh で開始状態ができる
+PASS	up.sh	ch04	ch04/up.sh で開始状態ができる
+PASS	up.sh	ch05	ch05/up.sh で開始状態ができる
+PASS	up.sh	ch06	ch06/up.sh で開始状態ができる
+PASS	up.sh	ch07	ch07/up.sh で開始状態ができる
+PASS	up.sh	ch08	ch08/up.sh で開始状態ができる

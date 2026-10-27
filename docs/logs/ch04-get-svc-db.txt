@@ -1,0 +1,2 @@
+NAME      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+todo-db   ClusterIP   10.100.110.160   <none>        5432/TCP   0s

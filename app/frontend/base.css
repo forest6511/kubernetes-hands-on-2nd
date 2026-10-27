@@ -1,0 +1,13 @@
+body { margin: 0; font-family: system-ui, sans-serif; background: #fff; color: #111; }
+header { display: flex; align-items: baseline; gap: 12px; padding: 16px 24px; background: var(--header); color: #fff; }
+header h1 { margin: 0; font-size: 24px; }
+#version { font-size: 14px; opacity: 0.9; }
+main { max-width: 480px; padding: 16px 24px; }
+form { display: flex; gap: 8px; }
+input#new-title { flex: 1; padding: 8px; font-size: 16px; }
+button { padding: 6px 12px; font-size: 14px; }
+ul { list-style: none; padding: 0; }
+li { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid #ddd; }
+li span { flex: 1; }
+.done { text-decoration: line-through; color: #666; }
+#error { color: #b91c1c; }

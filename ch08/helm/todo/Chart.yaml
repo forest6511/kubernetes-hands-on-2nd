@@ -1,0 +1,7 @@
+# #region chart
+apiVersion: v2
+name: todo
+description: Todo アプリ（todo-frontend・todo-api・todo-db）
+version: 0.1.0
+appVersion: "v1"
+# #endregion chart

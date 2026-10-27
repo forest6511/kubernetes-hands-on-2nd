@@ -1,0 +1,12 @@
+# #region todo-db-pvc
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: todo-db-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+# #endregion todo-db-pvc

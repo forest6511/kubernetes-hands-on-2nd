@@ -1,0 +1,2 @@
+NAME                    READY   STATUS             RESTARTS   AGE
+typo-69856ccddd-7qqnt   0/1     ImagePullBackOff   0          15s

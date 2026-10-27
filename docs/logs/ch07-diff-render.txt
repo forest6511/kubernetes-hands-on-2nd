@@ -1,0 +1,12 @@
+3c3
+<   APP_TITLE: Todo（開発）
+---
+>   APP_TITLE: Todo
+46c46
+<   replicas: 1
+---
+>   replicas: 3
+124c124
+<   replicas: 1
+---
+>   replicas: 3

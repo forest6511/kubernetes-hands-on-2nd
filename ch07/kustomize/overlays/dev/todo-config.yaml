@@ -1,0 +1,9 @@
+# #region dev-patch
+# base の ConfigMap todo-config のうち、APP_TITLE だけを置き換える
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todo-config
+data:
+  APP_TITLE: "Todo（開発）"
+# #endregion dev-patch

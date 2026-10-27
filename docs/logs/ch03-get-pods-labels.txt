@@ -1,0 +1,2 @@
+NAME                    READY   STATUS    RESTARTS   AGE   LABELS
+hello-bcd74f989-5nd46   1/1     Running   0          2s    app=hello,pod-template-hash=bcd74f989

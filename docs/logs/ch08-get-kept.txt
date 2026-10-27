@@ -1,0 +1,5 @@
+NAME                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/todo-db-data   Bound    pvc-aef44ff5-b16d-4d1b-9acc-a92b3455cd8e   1Gi        RWO            standard       <unset>                 116s
+
+NAME                                             CLASS   ADDRESS        PROGRAMMED   AGE
+gateway.gateway.networking.k8s.io/todo-gateway   nginx   10.110.6.187   True         3m12s

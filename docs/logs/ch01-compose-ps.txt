@@ -1,0 +1,4 @@
+SERVICE         STATUS
+todo-api        Up 1 second
+todo-db         Up 1 second
+todo-frontend   Up 1 second

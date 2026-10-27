@@ -1,0 +1,18 @@
+bash -c kubectl kustomize 'https://github.com/nginx/nginx-gateway-fabric/config/crd/gateway-api/standard?ref=v2.8.0' | kubectl apply -f - | tail -3
+bash -c kubectl apply --server-side -f https://raw.githubusercontent.com/nginx/nginx-gateway-fabric/v2.8.0/deploy/crds.yaml | tail -3
+bash -c kubectl apply -f https://raw.githubusercontent.com/nginx/nginx-gateway-fabric/v2.8.0/deploy/nodeport/deploy.yaml | tail -4
+kubectl wait -n nginx-gateway --for=condition=Available deployment --all --timeout=300s
+kubectl get gatewayclass
+kubectl apply -f ch05/gateway.yaml
+kubectl get gateway
+kubectl get service todo-gateway-nginx
+kubectl apply -f ch05/httproute.yaml
+kubectl get httproute
+minikube service todo-gateway-nginx --url
+curl -s http://127.0.0.1:54614/api/todos
+kubectl logs deployment/todo-api --tail=2
+kubectl get pods -o wide
+bash -c kubectl describe httproute todo | sed -n '/^Status:/,$p'
+kubectl apply -f ch05/httproute-typo.yaml
+bash -c kubectl describe httproute todo | sed -n '/^Status:/,$p'
+kubectl apply -f ch05/httproute.yaml

@@ -1,0 +1,4 @@
+job.batch/nginx-gateway-cert-generator created
+gatewayclass.gateway.networking.k8s.io/nginx created
+nginxgateway.gateway.nginx.org/nginx-gateway-config created
+nginxproxy.gateway.nginx.org/nginx-gateway-proxy-config created

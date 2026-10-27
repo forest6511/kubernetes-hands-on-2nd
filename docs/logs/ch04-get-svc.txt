@@ -1,0 +1,5 @@
+NAME            TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+kubernetes      ClusterIP   10.96.0.1        <none>        443/TCP    116s
+todo-api        ClusterIP   10.111.151.111   <none>        8080/TCP   1s
+todo-db         ClusterIP   10.100.110.160   <none>        5432/TCP   7s
+todo-frontend   ClusterIP   10.102.229.73    <none>        80/TCP     1s

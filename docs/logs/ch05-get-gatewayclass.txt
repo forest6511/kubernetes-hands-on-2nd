@@ -1,0 +1,2 @@
+NAME    CONTROLLER                                   ACCEPTED   AGE
+nginx   gateway.nginx.org/nginx-gateway-controller   True       19s

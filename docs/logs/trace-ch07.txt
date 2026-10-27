@@ -1,0 +1,9 @@
+minikube service todo-gateway-nginx --url
+diff -r ch07/copy/dev ch07/copy/prod
+bash -c kubectl kustomize ch07/kustomize/overlays/dev | head -20
+bash -c diff <(kubectl kustomize ch07/kustomize/overlays/dev) <(kubectl kustomize ch07/kustomize/overlays/prod)
+kubectl kustomize ch07/kustomize/overlays/typo
+kubectl apply -k ch07/kustomize/shared
+kubectl apply -k ch07/kustomize/overlays/dev
+kubectl rollout restart deployment/todo-api
+kubectl rollout status deployment/todo-api

@@ -1,0 +1,5 @@
+# わざと失敗させる overlay: パッチの対象の名前が1文字違う
+resources:
+  - ../../base
+patches:
+  - path: replicas.yaml

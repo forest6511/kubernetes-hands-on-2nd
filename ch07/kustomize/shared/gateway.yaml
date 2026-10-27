@@ -1,0 +1,13 @@
+# #region gateway
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: todo-gateway
+spec:
+  # どの実装（コントローラー）にこの入口を作らせるか
+  gatewayClassName: nginx
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 80
+# #endregion gateway

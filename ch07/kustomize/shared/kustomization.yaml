@@ -1,0 +1,6 @@
+# #region shared
+# アプリを入れ直しても残したいもの（入口とデータの置き場）
+resources:
+  - gateway.yaml
+  - todo-db-pvc.yaml
+# #endregion shared

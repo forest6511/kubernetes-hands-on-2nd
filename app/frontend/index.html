@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1 id="title">Todo</h1><span id="version"></span></header>
+  <main>
+    <form id="add">
+      <input id="new-title" placeholder="やることを入力" autocomplete="off" required>
+      <button type="submit">追加</button>
+    </form>
+    <p id="error" hidden></p>
+    <ul id="todos"></ul>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+NAME                            READY   STATUS    RESTARTS      AGE
+todo-api-75875bc9f9-5rl8k       1/1     Running   0             27s
+todo-db-6756659cd7-mh2xd        1/1     Running   0             8s
+todo-frontend-d75f6d75d-2wlrw   1/1     Running   0             1s
+todo-frontend-fd8cfb49b-cttqn   0/1     Error     2 (20s ago)   21s

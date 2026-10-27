@@ -1,0 +1,6 @@
+Events:
+  Type     Reason     Age              From               Message
+  ----     ------     ----             ----               -------
+  Normal   Scheduled  1s               default-scheduler  Successfully assigned default/todo-api-798464dcdb-fvpq6 to minikube
+  Normal   Pulled     0s (x2 over 1s)  kubelet            spec.containers{api}: Container image "todo-api:v1" already present on machine and can be accessed by the pod
+  Warning  Failed     0s (x2 over 1s)  kubelet            spec.containers{api}: Error: couldn't find key passwd in Secret default/todo-db

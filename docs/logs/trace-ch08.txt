@@ -1,0 +1,21 @@
+helm version --short
+bash -c helm install podinfo oci://ghcr.io/stefanprodan/charts/podinfo --version 6.17.0 2>&1 | head -8
+helm list
+helm uninstall podinfo
+helm template todo ch08/helm/todo --show-only templates/todo-config.yaml
+helm lint ch08/helm/todo
+kubectl delete -k ch07/kustomize/overlays/dev
+kubectl get pvc,gateway
+helm install todo ch08/helm/todo
+kubectl get pods
+minikube service todo-gateway-nginx --url
+bash -c helm upgrade todo ch08/helm/todo --set api.replicas=2 | head -6
+helm history todo
+helm upgrade todo ch08/helm/todo --set api.tag=v9 --wait=watcher --timeout=90s
+helm history todo
+kubectl get pods -l app=todo-api
+helm rollback todo 2
+helm history todo
+helm upgrade todo ch08/helm/todo --set api.tag=v9 --rollback-on-failure --timeout=90s
+helm history todo
+helm list

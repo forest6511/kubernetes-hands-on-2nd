@@ -1,0 +1,8 @@
+docker compose -f ch01/compose.yaml up -d
+docker compose -f ch01/compose.yaml ps --format table {{.Service}}\t{{.Status}}
+curl -s http://localhost:8000/api/todos
+docker rm -f ch01-todo-api-1
+curl -s http://localhost:8000/api/todos
+docker compose -f ch01/compose.yaml up -d
+curl -s http://localhost:8000/api/todos
+docker compose -f ch01/compose.yaml down -v

@@ -1,0 +1,16 @@
+# #region prod-patch
+# base の Deployment のうち、replicas だけを置き換える
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-api
+spec:
+  replicas: 3
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-frontend
+spec:
+  replicas: 3
+# #endregion prod-patch

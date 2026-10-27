@@ -1,0 +1,3 @@
+level=WARN msg="upgrade failed" name=todo error="resource Deployment/default/todo-api not ready. status: InProgress, message: Pending termination: 1\ncontext deadline exceeded"
+Error: UPGRADE FAILED: resource Deployment/default/todo-api not ready. status: InProgress, message: Pending termination: 1
+context deadline exceeded

@@ -1,0 +1,1 @@
+error: no resource matches strategic merge patch "Deployment.v1.apps/todo-apl.[noNs]": no matches for Id Deployment.v1.apps/todo-apl.[noNs]; failed to find unique target for patch Deployment.v1.apps/todo-apl.[noNs]

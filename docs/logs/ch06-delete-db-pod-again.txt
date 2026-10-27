@@ -1,0 +1,1 @@
+pod "todo-db-5dfc49b464-ghsgd" deleted from default namespace

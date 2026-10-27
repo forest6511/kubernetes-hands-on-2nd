@@ -1,0 +1,48 @@
+# #region todo-db
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-db
+spec:
+  replicas: 1
+  # #region strategy
+  # 更新のときは古い Pod を止めてから新しい Pod を作る
+  # （2つの DB が同じデータの置き場を同時に使わないため）
+  strategy:
+    type: Recreate
+  # #endregion strategy
+  selector:
+    matchLabels:
+      app: todo-db
+  template:
+    metadata:
+      labels:
+        app: todo-db
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:18.6-alpine
+          env:
+            - name: POSTGRES_USER
+              value: todo
+            # #region secret-ref
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: todo-db
+                  key: password
+            # #endregion secret-ref
+            - name: POSTGRES_DB
+              value: todo
+          ports:
+            - containerPort: 5432
+          # #region mount
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: todo-db-data
+          # #endregion mount
+# #endregion todo-db

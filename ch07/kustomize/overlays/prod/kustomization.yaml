@@ -1,0 +1,7 @@
+# #region prod
+# 本番用: base に「台数の違い」だけを重ねる（todo-db は base のまま1つ）
+resources:
+  - ../../base
+patches:
+  - path: replicas.yaml
+# #endregion prod

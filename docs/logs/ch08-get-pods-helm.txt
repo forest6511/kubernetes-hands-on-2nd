@@ -1,0 +1,6 @@
+NAME                                  READY   STATUS        RESTARTS      AGE
+podinfo-c6497595d-w4g9v               0/1     Terminating   0             3s
+todo-api-57f68d989-ggtdt              1/1     Running       0             2s
+todo-db-5dfc49b464-2z8cv              1/1     Running       0             2s
+todo-frontend-58cdb6c577-7xjpn        1/1     Running       0             2s
+todo-gateway-nginx-55d85d8bfb-62888   1/1     Running       1 (90s ago)   3m14s

@@ -1,0 +1,12 @@
+bash -c minikube version; kubectl version --client
+minikube start --driver=docker --container-runtime=containerd --kubernetes-version=v1.37.0 --cpus=2 --memory=3072
+minikube status
+kubectl config current-context
+kubectl get nodes
+kubectl run hello --image=nginx:1.30.6-alpine
+kubectl get pods
+kubectl port-forward pod/hello 8000:80
+kubectl delete pod hello
+kubectl get pods -A
+minikube stop
+minikube start

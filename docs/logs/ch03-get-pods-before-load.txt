@@ -1,0 +1,2 @@
+NAME                        READY   STATUS         RESTARTS   AGE
+todo-api-75875bc9f9-8hnbp   0/1     ErrImagePull   0          3s

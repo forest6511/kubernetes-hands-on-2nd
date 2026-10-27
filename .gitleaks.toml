@@ -6,6 +6,8 @@ useDefault = true
 description = "ドキュメントの慣例値。実在しないので検出から除外する"
 regexes = [
   '''[A-Za-z0-9._%+-]+@example\.com''',
+  # 第6章で「Secret の base64 は暗号ではない」ことを見せる、学習用のパスワード todo-pass を base64 にした値
+  '''dG9kby1wYXNz''',
 ]
 paths = [
   '''\.gitleaks\.toml''',

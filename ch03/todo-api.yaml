@@ -1,0 +1,32 @@
+# #region todo-api
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-api
+  template:
+    metadata:
+      labels:
+        app: todo-api
+    spec:
+      containers:
+        - name: api
+          image: todo-api:v1
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: DB_HOST
+              value: todo-db
+            - name: DB_PASSWORD
+              value: todo-pass
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 8080
+            periodSeconds: 5
+# #endregion todo-api
