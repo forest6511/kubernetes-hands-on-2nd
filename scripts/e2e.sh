@@ -454,6 +454,10 @@ ch07() {
 }
 
 ch08() {
+  # 前の章の Todo（第6章の「消えない Todo」）。up.sh から始めたときは無いので、ここで入れておく
+  gateway_url
+  body "$GW/api/todos" | grep -q '消えない Todo' || add_todo "$GW" "消えない Todo"
+  stop_bg
   cap helm-version helm version --short
   cap podinfo-install bash -c "helm install podinfo oci://ghcr.io/stefanprodan/charts/podinfo --version 6.17.0 2>&1 | head -8"
   cap helm-list-podinfo helm list

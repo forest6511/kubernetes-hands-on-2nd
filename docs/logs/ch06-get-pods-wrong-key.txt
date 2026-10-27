@@ -1,3 +1,3 @@
 NAME                        READY   STATUS                       RESTARTS   AGE
-todo-api-75875bc9f9-7mjxp   1/1     Running                      0          2m37s
-todo-api-798464dcdb-fvpq6   0/1     CreateContainerConfigError   0          1s
+todo-api-75875bc9f9-lxfs4   1/1     Running                      0          92s
+todo-api-798464dcdb-q4mp7   0/1     CreateContainerConfigError   0          2s

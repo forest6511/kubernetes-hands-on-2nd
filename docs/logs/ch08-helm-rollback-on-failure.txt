@@ -1,3 +1,4 @@
 level=WARN msg="upgrade failed" name=todo error="resource Deployment/default/todo-api not ready. status: InProgress, message: Pending termination: 1\ncontext deadline exceeded"
+E1027 11:00:05.867433   85023 request.go:1198] "Unexpected error when reading response body" err="context canceled"
 Error: UPGRADE FAILED: release todo failed, and has been rolled back due to rollback-on-failure being set: resource Deployment/default/todo-api not ready. status: InProgress, message: Pending termination: 1
 context deadline exceeded

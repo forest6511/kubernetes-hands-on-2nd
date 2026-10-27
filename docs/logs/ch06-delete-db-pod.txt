@@ -1,1 +1,1 @@
-pod "todo-db-6756659cd7-pn4wf" deleted from default namespace
+pod "todo-db-6756659cd7-4zp26" deleted from default namespace

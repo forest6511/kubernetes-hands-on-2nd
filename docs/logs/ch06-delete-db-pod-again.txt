@@ -1,1 +1,1 @@
-pod "todo-db-5dfc49b464-ghsgd" deleted from default namespace
+pod "todo-db-5dfc49b464-w7l7p" deleted from default namespace

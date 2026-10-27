@@ -1,2 +1,2 @@
 NAME                 PROVISIONER                RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
-standard (default)   k8s.io/minikube-hostpath   Delete          Immediate           false                  3m49s
+standard (default)   k8s.io/minikube-hostpath   Delete          Immediate           false                  2m31s

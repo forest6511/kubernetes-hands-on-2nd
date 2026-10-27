@@ -1,7 +1,7 @@
 Pulled: ghcr.io/stefanprodan/charts/podinfo:6.17.0
 Digest: sha256:258d0da545724b4eea8de5d5e724cd9a75aab3de79a87ba8d82ec402745cea58
 NAME: podinfo
-LAST DEPLOYED: Tue Oct 27 10:17:19 2026
+LAST DEPLOYED: Tue Oct 27 10:56:34 2026
 NAMESPACE: default
 STATUS: deployed
 REVISION: 1
