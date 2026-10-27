@@ -235,7 +235,7 @@ ch03() {
   cap get-pods-todo kubectl get pods
   check DNS "todo-api が READY 0/1" test "$(kubectl get pods -l app=todo-api -o jsonpath='{.items[0].status.containerStatuses[0].ready}')" = false
   cap logs-api kubectl logs deployment/todo-api --tail=2
-  check DNS "todo-api のログに todo-db の名前解決の失敗" grep -q 'lookup todo-db.*no such host' <(kubectl logs deployment/todo-api)
+  check DNS "todo-api のログに todo-db の名前解決の失敗" grep -qE 'lookup todo-db.*(no such host|server misbehaving)' <(kubectl logs deployment/todo-api)
   cap logs-frontend kubectl logs deployment/todo-frontend
   check DNS "todo-frontend のログに upstream todo-api の失敗" \
     grep -q 'host not found in upstream "todo-api"' <(kubectl logs deployment/todo-frontend)

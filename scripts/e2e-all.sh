@@ -41,12 +41,14 @@ up_check() { # up_check <章> <確かめるコマンド...>
   else
     printf 'FAIL\tup.sh\tch%s\t%s\n' "$n" "ch$n/up.sh（ログ: $WORK/up-$n.log）" >>"$E2E_RESULTS"
     echo "FAIL [up.sh] ch${n}（$WORK/up-$n.log）" >&2; rc=1
+    tail -40 "$WORK/up-$n.log" >&2
+    kubectl get pods -A >&2 || true
   fi
 }
 unset E2E_TRACE
 up_check 03 kubectl wait --for=condition=Ready node --all --timeout=60s
 up_check 04 bash -c "kubectl get pods -l app=todo-api -o jsonpath='{.items[0].status.containerStatuses[0].ready}' | grep -q false"
-up_check 05 kubectl wait --for=condition=Ready pod -l app=todo-frontend --timeout=120s
+up_check 05 kubectl rollout status deployment/todo-frontend --timeout=120s
 up_check 06 kubectl wait --for=condition=Programmed gateway/todo-gateway --timeout=120s
 up_check 07 bash -c "kubectl get pvc todo-db-data -o jsonpath='{.status.phase}' | grep -q Bound"
 up_check 08 bash -c "kubectl get configmap todo-config -o jsonpath='{.data.APP_TITLE}' | grep -q '開発'"

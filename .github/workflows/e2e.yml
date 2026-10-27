@@ -11,6 +11,11 @@ on:
 permissions:
   contents: read
 
+# bash -eo pipefail で動かす（e2e の出力を tee に通しても、失敗が終了コードに残るように）
+defaults:
+  run:
+    shell: bash
+
 env:
   MINIKUBE_VERSION: v1.39.0
   KUBECTL_VERSION: v1.37.1
@@ -26,6 +31,7 @@ jobs:
       - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
         with:
           go-version-file: app/api/go.mod
+          cache-dependency-path: app/api/go.sum
       - name: tools
         run: |
           go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.15.0
