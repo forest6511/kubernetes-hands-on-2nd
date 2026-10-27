@@ -9,7 +9,7 @@ kubectl get service todo-gateway-nginx
 kubectl apply -f ch05/httproute.yaml
 kubectl get httproute
 minikube service todo-gateway-nginx --url
-curl -s http://127.0.0.1:54614/api/todos
+curl -s http://127.0.0.1:58182/api/todos
 kubectl logs deployment/todo-api --tail=2
 kubectl get pods -o wide
 bash -c kubectl describe httproute todo | sed -n '/^Status:/,$p'

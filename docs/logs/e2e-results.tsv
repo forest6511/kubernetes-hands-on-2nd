@@ -15,7 +15,7 @@ PASS	起動	ch02	delete のあと Pod が無い
 PASS	起動	ch02	kube-system で Kubernetes の部品が動いている
 PASS	起動	ch02	stop と start のあと node が Ready
 PASS	自己修復	ch03	Pod を直接作ると、消したあと戻らない
-PASS	自己修復	ch03	Deployment の Pod は消すと別の名前で戻る（hello-bcd74f989-fzhc8 → hello-bcd74f989-5nd46）
+PASS	自己修復	ch03	Deployment の Pod は消すと別の名前で戻る（hello-bcd74f989-df848 → hello-bcd74f989-28dtd）
 PASS	自己修復	ch03	3つのうち1つを消しても3つに戻る
 PASS	失敗	ch03	イメージ名の誤りで ImagePullBackOff / ErrImagePull
 PASS	失敗	ch03	minikube に渡す前は todo-api が ImagePullBackOff
@@ -24,7 +24,7 @@ PASS	失敗	ch03	todo-frontend が CrashLoopBackOff / Error
 PASS	DNS	ch03	todo-api が READY 0/1
 PASS	DNS	ch03	todo-api のログに todo-db の名前解決の失敗
 PASS	DNS	ch03	todo-frontend のログに upstream todo-api の失敗
-PASS	DNS	ch04	Pod を作り直すと名前が変わる（todo-db-6756659cd7-knmbk → todo-db-6756659cd7-mh2xd）
+PASS	DNS	ch04	Pod を作り直すと名前が変わる（todo-db-6756659cd7-jngg6 → todo-db-6756659cd7-z4xwh）
 PASS	DNS	ch04	todo-db の EndpointSlice に DB の Pod の IP
 PASS	DNS	ch04	Service ができると todo-api が READY 1/1
 PASS	DNS	ch04	todo-frontend が Running（READY 1/1）
@@ -62,7 +62,7 @@ PASS	永続化	ch06	（困りごと）DB の Pod を消す前は Todo がある
 PASS	永続化	ch06	（困りごと）PVC が無いと DB の Pod を消すと Todo が消える
 PASS	設定	ch06	base64 -d で元のパスワードに戻る
 PASS	失敗	ch06	存在しないキーで CreateContainerConfigError
-FAIL	失敗	ch06	describe に「couldn't find key passwd」
+PASS	失敗	ch06	describe に「couldn't find key passwd」
 PASS	失敗	ch06	失敗している間も古い todo-api は動いている
 PASS	設定	ch06	APP_TITLE が ConfigMap から入る（Todo）
 PASS	設定	ch06	apply しただけでは画面の見出しは変わらない

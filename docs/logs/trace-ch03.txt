@@ -4,13 +4,13 @@ kubectl delete pod hello
 kubectl get pods
 kubectl apply -f ch03/deployment.yaml
 kubectl get pods
-kubectl delete pod hello-bcd74f989-fzhc8
+kubectl delete pod hello-bcd74f989-df848
 kubectl get pods
 kubectl get replicasets
 kubectl get pods --show-labels
 kubectl scale deployment hello --replicas=3
 kubectl get pods
-kubectl delete pod hello-bcd74f989-5nd46
+kubectl delete pod hello-bcd74f989-28dtd
 kubectl apply -f ch03/typo.yaml
 kubectl get pods -l app=typo
 bash -c kubectl describe pod -l app=typo | sed -n '/^Events:/,$p'

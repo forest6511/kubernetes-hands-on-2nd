@@ -8,10 +8,10 @@ kubectl get secret todo-db -o jsonpath={.data.password}
 bash -c kubectl get secret todo-db -o jsonpath='{.data.password}' | base64 -d
 kubectl apply -f ch06/todo-api-wrong-key.yaml
 kubectl get pods -l app=todo-api
-bash -c kubectl describe pod todo-api-798464dcdb-q4mp7 | sed -n '/^Events:/,$p'
+bash -c kubectl describe pod todo-api-798464dcdb-xh68x | sed -n '/^Events:/,$p'
 kubectl apply -f ch06/todo-api.yaml
 kubectl rollout status deployment/todo-api
-curl -s http://127.0.0.1:60804/api/config
+curl -s http://127.0.0.1:58254/api/config
 kubectl apply -f ch06/todo-config.yaml
 kubectl rollout restart deployment/todo-api
 kubectl rollout status deployment/todo-api
@@ -22,7 +22,7 @@ kubectl apply -f ch06/todo-db.yaml
 kubectl rollout status deployment/todo-db
 kubectl get pvc,pv
 kubectl delete pod -l app=todo-db
-curl -s http://127.0.0.1:60804/api/todos
+curl -s http://127.0.0.1:58254/api/todos
 minikube stop
 minikube start
 minikube service todo-gateway-nginx --url
